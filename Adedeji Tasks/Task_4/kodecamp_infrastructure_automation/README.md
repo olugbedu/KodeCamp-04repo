@@ -19,9 +19,9 @@ And also provides the function setup_directories which lists the specific direct
 - Directory to create the file
 - Don't create the file if the Directory name is not one of the company directories.
 
-I wrote another script using the built-in os and the created(create_user_and_group and create_dir) modules which provides the `create_file_in_directory` function that is responsible for creating a file in a valid company directory. Then, i used a main function to call create users, setup directories, prompt the user for a file name and a valid directory to create the file in, ensure the directory is valid before creating the file, and a loop to keep iterating until a valid directory is entered.
+I wrote another script using the built-in os and the created(create_user_and_group and create_dir) modules which provides the `create_file_in_directory` function that is responsible for creating a file in a valid company directory. Then, i used a main function to call create users, setup directories, prompt the user for a file name and a valid directory to create the file in, ensure the directory is valid before creating the file, and a loop to keep iterating until a valid directory is entered by the user.
 
-![create file](images/file.png)
+![create file](images/looped_main_output.png)
 
 ## Final Output
 When the scripts are run all together here is the output.
