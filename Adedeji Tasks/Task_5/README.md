@@ -6,29 +6,29 @@ This is a breakdown of the steps I took to set up a Virtual Private Cloud (VPC) 
 ### Create a VPC:
 I created a vpc named KCVPC and gave it IPv4 CIDR block (10.0.0.0/16)
 
-![kc vpc](images/kcvpc.png)
+![kc vpc](Images/KCVPC.png)
 
 ### Create Subnets:
 I created a public subnet and a private subnet giving each IPv4 CIDR block 10.0.1.0/24 and 10.0.2.0/24 respectively
 
-![public subnet](images/publicsubnet.png)
-![private subnet](images/privatesubnet.png)
+![public subnet](Images/PublicSubnet.png)
+![private subnet](Images/PrivateSubnet.png)
 
 ### Configure an Internet Gateway (IGW):
 I created an internet gateway and attached it to KCVPC . 
 
-![Internet gateway](images/igw.png)
+![Internet gateway](Images/IGW.png)
 
 ### Configure NAT Gateway:
 I create a NAT Gateway in the public subnet and allocated an Elastic IP for the NAT Gateway.
 
-![NAT gateway](images/NAT_gateway.png)
+![NAT gateway](Images/NAT_gateway.png)
 
 ### Configure Route Tables:
 I configured the public route table, associated it with public subnet and added the route to internet(IGW 0.0.0.0/0). Then, I configured the private route table, associated it with private subnet and addded nat gateway to ensure no direct route to internet(NAT 0.0.0.0/0).
 
-![Public route table](images/Public_RouteTable.png)
-![Private route table](images/Private_RouteTable.png)
+![Public route table](Images/Public_RouteTable.png)
+![Private route table](Images/Private_RouteTable.png)
 
 
 ### Set Up Security Groups:
@@ -40,8 +40,8 @@ Then i created a Security Group for private instances, I named it PrivateSG and 
 - Inbound traffic from the PublicSubnet on required ports (MySQL port 3306).
 - All outbound traffic.
 
-![Public Security Group](images/Publicsg.png)
-![Private Security Group](images/Privatesg.png)
+![Public Security Group](Images/PublicSG.png)
+![Private Security Group](Images/PrivateSG.png)
 
 ### Network ACLs:
 I configured NACLs for additional security on both subnets.
@@ -49,19 +49,19 @@ I configured NACLs for additional security on both subnets.
 - Private Subnet NACL: Allow inbound traffic from the public subnet. Allow outbound traffic to the public subnet and internet.
 
 
-![Network ACLs](images/NACLs.png)
+![Network ACLs](Images/NACLs.png)
 
 ### Deploy Instances:
 I launched an EC2 instance in the Public Subnet. Using the public security group, I connected with ssh client.
 I also launched an EC2 instance in the Private Subnet, using the private security group.
 
-![SSH client](images/ssh_connect.png)
-![Public EC2](images/public_ec2instance.png)
-![Private EC2](images/private_ec2instance.png)
+![SSH client](Images/ssh_connect.png)
+![Public EC2](Images/Public_EC2Instance.png)
+![Private EC2](Images/Private_EC2instance.png)
 
 ## A diagram of the VPC architecture, showing the VPC, subnets, route tables, and security configurations.
 
-![Diagram](images/kcvpc_diagram.png)
+![Diagram](Images/KCVPC_diagram.png)
 
 ## A brief explanation of the purpose and function of each component created (VPC, subnets, IGW, NAT Gateway, route tables, security groups, NACLs).
 
