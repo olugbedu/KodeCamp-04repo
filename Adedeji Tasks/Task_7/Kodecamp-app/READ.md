@@ -48,7 +48,7 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 ![docker build](images/docker-build.png)
 ![docker publish](images/docker-publish.png)
-![Port 8000](images/dockerimage-port-8000.png)
+![Port 8000](images/dockerimage-Port-8000.png)
 
 - Tag it and Push the Docker image to a container registry (Docker Hub)
 ![docker tag](images/docker-tag.png)
@@ -175,7 +175,7 @@ metadata:
   name: kodecamp-secret
 type: Opaque
 data:
-  PASSWORD: c2VjcmV0cGFzc3dvcmQ= 
+  PASSWORD: c2VjcmV0cGFzc3dvcmQ= # for practice
 ```
 
 - update your application to use this Secret.
