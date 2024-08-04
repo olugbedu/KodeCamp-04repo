@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kodecamp-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kodecamp-app
+  template:
+    metadata:
+      labels:
+        app: kodecamp-app
+    spec:
+      containers:
+      - name: kodecamp-app
+        image: gbedu/kodecamp-app
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"

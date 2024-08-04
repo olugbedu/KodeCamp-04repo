@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kodecamp-config
+data:
+  MESSAGE: "Hello, Kubernetes!"
