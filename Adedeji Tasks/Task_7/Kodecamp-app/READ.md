@@ -192,4 +192,15 @@ def read_root():
     return {"message": message, "password": password}
 ```
 
+### Issues Encountered
+I encountered issues in deploying the application to a Kubernetes cluster 
+- Issue 1: 
+`error: error validating "deployment.yaml": error validating data: failed to download openapi: Get "https://192.168.59.100:8443/openapi/v2?timeout=32s": net/http: TLS handshake timeout; if you choose to ignore these errors, turn validation off with --validate=false`
+I got solution from [](https://minikube.sigs.k8s.io/docs/handbook/troubleshooting/)
 
+- Issue 2:
+ `E0804 15:33:16.052721 6368 memcache.go:265] couldn't get current server API group list: Get "https://192.168.59.100:8443/api?timeout=32s": net/http: TLS handshake timeout`
+ I solved it by resetting the kubernetes cluster to default setting
+
+- Issue 3: Hung start-up
+I solved with `minikube logs --problems`
