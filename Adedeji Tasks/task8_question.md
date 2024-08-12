@@ -54,4 +54,4 @@ GitHub Repo
 Resources
 https://docs.github.com/en/actions
 https://minikube.sigs.k8s.io/docs/
-https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs.
